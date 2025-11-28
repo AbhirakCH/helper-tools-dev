@@ -9,7 +9,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-// import * as OTPAuth from "otpauth";
+import * as OTPAuth from "otpauth";
 
 export default function OtpGenerator() {
   const [secret, setSecret] = useState("");
@@ -28,16 +28,15 @@ export default function OtpGenerator() {
     const generate = () => {
       try {
         // Clean secret (remove spaces)
-        // const cleanSecret = secret.replace(/\s/g, "");
-        // const totp = new OTPAuth.TOTP({
-        //   secret: cleanSecret,
-        //   algorithm: "SHA1",
-        //   digits: 6,
-        //   period: 30,
-        // });
+        const cleanSecret = secret.replace(/\s/g, "");
+        const totp = new OTPAuth.TOTP({
+          secret: cleanSecret,
+          algorithm: "SHA1",
+          digits: 6,
+          period: 30,
+        });
 
-        // setToken(totp.generate());
-        setToken("DISABLED");
+        setToken(totp.generate());
 
         const period = 30;
         const epoch = Math.floor(Date.now() / 1000);
