@@ -55,8 +55,8 @@ A comprehensive collection of developer and web tools built with React, Vite, Ty
 - **Open Graph Meta Generator**: Generate OG tags for social sharing.
 - **MIME Types**: Searchable list of MIME types.
 - **Keycode Info**: View JavaScript key event information.
-- **OTP Code Generator**: Generate TOTP codes (currently disabled).
-- **HTML WYSIWYG Editor**: Rich text editor (currently disabled).
+- **OTP Code Generator**: Generate TOTP codes.
+- **HTML WYSIWYG Editor**: Rich text editor.
 
 ### Development
 
